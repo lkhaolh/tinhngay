@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<script type="text/javascript">
+	function caculate(){
+	let a = parseInt(document.getElementById('thang').value);
+	let b = parseInt(document.getElementById('nam').value);
+	let c = "";
+
+	switch(a){
+		 case 1:
+	    case 3:
+	    case 5:
+	    case 7:
+	    case 8:
+	    case 10:
+	    case 12:
+      		c = 31;
+     	 break;	
+		default: alert('Nhập lại');
+	  	case 4:
+	    case 6:
+	    case 9:
+	    case 11:
+     		c = 30;
+      	break;
+    	case 2:
+      if(b % 400 == 0 || (b % 4 == 0 && b % 100 != 0)){
+        c = 29;
+      } else {
+        c = 28;
+      }
+      break;
+  }
+  let kq = (`Tháng ${a}  năm ${b} có ${c} ngày`);
+  document.getElementById('kq').value= kq
+}
+</script>
+<body>
+<div style="width: 400px;height: 200px;background: white; background-image: url(https://gamek.mediacdn.vn/thumb_w/640/133514250583805952/2022/6/4/photo-1-1654333508977448940123.jpg);">
+	<div style="color: white; text-align: center;background: black;margin: 0px;"><h2>Tính ngày tháng năm</h2></div>
+	<div style="width: 400px;height: 50px;float: left;text-indent: 20px;font-size: 20px;color: white;">
+		Tháng/Năm
+		<input type="number" id="thang" placeholder="Nhập tháng" style="width: 100px;">
+		<input type="number" id="nam" placeholder="Nhập năm" style="width: 100px;">
+	</div>
+	<div style="width: 400px;height: 50px;float: left;">
+		<button onclick="caculate()" style="margin-left: 100px;width: 200px;height: 25px;background: white; ">Tính số ngày</button>
+	</div>
+	<div style="width: 400px;height: 50px;float: left;">
+		<input type="text" id="kq" placeholder="Kết quả" style="width: 250px;height: 20px;margin-left: 70px">
+	</div>
+</div>
+</body>
+</html>
